@@ -9,14 +9,40 @@ export default withMermaid(
         lang: 'zh-CN',
         themeConfig: {
             // https://vitepress.dev/reference/default-theme-config
-            logo: '/logo.png',
+            logo: '/logo-f.png',
             nav: [
                 {text: 'Home', link: '/'},
                 {
-                    text: 'Coding',
+                  text: 'Build',
+                  link: '/projects/'
+                },
+                {
+                    text: 'Dev',
                     items: [
-                        {text: '前端', link: '/frontend'},
-                        {text: '后端', link: '/backend'}
+                        {
+                            text: '前端',
+                            items: [
+                                {text: 'JavaScript', link: '/javaScript/'},
+                                {text: 'Vue', link: '/vue/'},
+                                {text: '杂七杂八🥘', link: '/front/'}
+                                // {text: 'TypeScript', link: '/ts/'},
+                                // {text: 'React', link: '/react/'}
+                            ]
+                        },
+                        {
+                            text: '后端',
+                            items: [
+                                {text: 'Python-Web', link: '/python/'},
+                                {text: 'Go-Web', link: '/go/'}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: 'Preload',
+                    items: [
+                        {text: '计网', link: '/web/'},
+                        {text: '算法', link: '/algorithm/'}
                     ]
                 },
                 {text: 'DaysWithVenki💖', link: 'https://dayswithvenki.top'}
@@ -24,12 +50,103 @@ export default withMermaid(
 
             sidebar: [
                 {
-                    text: 'Examples',
+                    text: '前端',
                     items: [
-                        {text: 'Markdown Examples', link: '/markdown-examples'},
-                        {text: 'Runtime API Examples', link: '/api-examples'}
+                        {
+                            text: 'JavaScript手写系列',
+                            items: [
+                                {
+                                    text: 'Ajax',
+                                    link: '/JavaScript/AJAX'
+                                },
+                                {
+                                    text: '柯里化',
+                                    link: '/JavaScript/curried'
+                                },
+                                {
+                                    text: '防抖与节流',
+                                    link: '/JavaScript/debounce&throttle'
+                                },
+                                {
+                                    text: 'Array, Object扁平化',
+                                    link: '/JavaScript/flattern'
+                                },
+                                {
+                                    text: 'instanceof',
+                                    link: '/JavaScript/instanceof'
+                                }
+                            ]
+                        },
+                        {
+                            text: 'Vue',
+                            items: [
+                                {
+                                    text: 'Vue2双向绑定',
+                                    link: '/Vue/vue2-easy-binding'
+                                },
+                                {
+                                    text: 'vDOM与diff',
+                                    link: '/Vue/vue-vDom'
+                                }
+                            ]
+                        },
+                        {
+                            text: '杂七杂八🥘',
+                            items: [
+                                {
+                                    text: '前端权限认证方式',
+                                    link: '/Front/前端权限认证方式'
+                                },
+                                {
+                                    text: '浏览器渲染过程',
+                                    link: '/Front/浏览器渲染过程'
+                                },
+                                {
+                                    text: '前端性能优化',
+                                    link: '/Front/前端性能优化'
+                                },
+                                {
+                                    text: '前端性能优化——实战',
+                                    link: '/Front/前端性能优化——实战'
+                                }
+                            ]
+                        }
                     ]
-                }
+                },
+                {
+                    text: '后端',
+                    items: [
+                        {
+                            text: 'Go',
+                            items: [
+
+                            ]
+                        },
+                        {
+                            text: 'Python',
+                            items: [
+
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: '基础知识',
+                    items: [
+                        {
+                            text: '计网',
+                            items: [
+
+                            ]
+                        },
+                        {
+                            text: '算法',
+                            items: [
+
+                            ]
+                        }
+                    ]
+                },
             ],
 
             socialLinks: [

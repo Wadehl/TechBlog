@@ -288,10 +288,6 @@ const Compiler = (element, vm) => {
     const name = ref("{{ name }}");
     const xxx = ref("{{ xxx }}")
 </script>
-
-
-
-
 ```js
 const Compiler = (element, vm) => {
     // ...
@@ -371,7 +367,7 @@ const Compiler = (element, vm) => {
 
 ![image-20230426180429921](..\assets\images\image-20230426180429921.png)
 
-
+::: details 页面模板语法渲染完整代码
 
 ```js
 // myVue2.js
@@ -406,7 +402,7 @@ const Compiler = (element, vm) => {
 };
 ```
 
-
+:::
 
 ### 5. 发布订阅模式
 
@@ -442,7 +438,8 @@ class Subscriber {
 
 
 此时，考虑一下我们什么时候会添加订阅者，什么时候会发布通知。
- 	- 发布通知：一般当数据被修改的时候会通知订阅者，而数据修改的时候会触发`Set`方法，因此，在`Set()`的最后就可以通知更新数据。 - 添加订阅者：一般遇到`{{}}`、 `v-model`、 `v-bind`的时候新建订阅者，并且将新建的订阅者，每次新建订阅者后，`callback`都会访问一次对象的值，即触发`Get`方法，因此在`Get()`的时候将==此次==的订阅者入订阅者队列。
+ 	- 发布通知：一般当数据被修改的时候会通知订阅者，而数据修改的时候会触发`Set`方法，因此，在`Set()`的最后就可以通知更新数据。 
+ 	- 添加订阅者：一般遇到`{{}}`、 `v-model`、 `v-bind`的时候新建订阅者，并且将新建的订阅者，每次新建订阅者后，`callback`都会访问一次对象的值，即触发`Get`方法，因此在`Get()`的时候将==此次==的订阅者入订阅者队列。
 
 ```js
 const Observer = (data_instance) => {
@@ -487,19 +484,20 @@ const Compiler = (element, vm) => {
 };
 ```
 
-
+:::tip
 
 这里有两个问题:
 
 - 怎么获取此次的subscriber进行入队操作呢？
-
 - Watcher里面还是用node.nodeValue进行替换吗？ ❌
 
-针对第一个问题：
+:::
+
+针对第一个问题：:tipping_hand_man:
 
 ​	我们可以在new `Subscriber`对象的时候，往`Publisher`里面添加一个临时变量`temp`存储当前的`new Subscriber`即`this`，入队的时候将`Publisher.temp`入队即可（有的话）。
 
-针对第二个问题：
+针对第二个问题：:tipping_hand_woman:
 
 ​	因为node.nodeValue实际上已经被处理(`replace`)过一次了，因此提前将`node.nodeValue`存储一次皆可。
 
@@ -554,7 +552,6 @@ class Subscriber {
 	constructor(vm, key, callback) {
 		// ...
 		Publisher.temp = this; // [!code ++]
-    	key.split(".").reduce((total, current) => total[current], vm.$data); // [!code ++]
     	Publisher.temp = null; // [!code ++]
 	}
 	update() {
@@ -615,16 +612,9 @@ const Compiler = (element, vm) => {
 
 
 
-至此，一个基于`Object.defineProperty`的简易双向绑定实现了。
+至此，一个基于`Object.defineProperty`的简易双向绑定实现了。:dark_sunglasses:
 
 ![image-20230426185717202](..\assets\images\image-20230426185717202.png)
 
 
 
-## 写在最后
-
-::: danger
-
-这里其实还有一个问题不是很清楚，那就是为什么`Subscriber`的构造函数里面需要对`key`进行一个递归呢？
-
-:::

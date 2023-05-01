@@ -1,5 +1,5 @@
-import { defineConfig } from 'vitepress';
-import { withMermaid } from "vitepress-plugin-mermaid";
+import {defineConfig} from 'vitepress';
+import {withMermaid} from "vitepress-plugin-mermaid";
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid(
@@ -9,12 +9,12 @@ export default withMermaid(
         lang: 'zh-CN',
         themeConfig: {
             // https://vitepress.dev/reference/default-theme-config
-            logo: '/logo-f.png',
+            logo: '/logo.png',
             nav: [
                 {text: 'Home', link: '/'},
                 {
-                  text: 'Build',
-                  link: '/projects/'
+                    text: 'Build',
+                    link: '/projects/'
                 },
                 {
                     text: 'Dev',
@@ -51,9 +51,11 @@ export default withMermaid(
             sidebar: [
                 {
                     text: '前端',
+                    collapsed: true,
                     items: [
                         {
                             text: 'JavaScript手写系列',
+                            collapsed: true,
                             items: [
                                 {
                                     text: 'Ajax',
@@ -79,6 +81,7 @@ export default withMermaid(
                         },
                         {
                             text: 'Vue',
+                            collapsed: true,
                             items: [
                                 {
                                     text: 'Vue2双向绑定',
@@ -92,6 +95,7 @@ export default withMermaid(
                         },
                         {
                             text: '杂七杂八🥘',
+                            collapsed: true,
                             items: [
                                 {
                                     text: '前端权限认证方式',
@@ -115,35 +119,37 @@ export default withMermaid(
                 },
                 {
                     text: '后端',
+                    collapsed: true,
                     items: [
                         {
                             text: 'Go',
-                            items: [
-
-                            ]
+                            collapsed: true,
+                            items: []
                         },
                         {
                             text: 'Python',
-                            items: [
-
-                            ]
+                            collapsed: true,
+                            items: []
                         }
                     ]
                 },
                 {
                     text: '基础知识',
+                    collapsed: true,
                     items: [
                         {
                             text: '计网',
+                            collapsed: true,
                             items: [
-
+                                {text: 'HTTP版本差异', link: '/Web/HTTP版本差异'},
+                                {text: 'HTTP相关', link: '/Web/HTTP相关'},
+                                {text: 'HTTP缓存', link: '/Web/HTTP缓存'},
                             ]
                         },
                         {
                             text: '算法',
-                            items: [
-
-                            ]
+                            collapsed: true,
+                            items: []
                         }
                     ]
                 },

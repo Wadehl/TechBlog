@@ -1,3 +1,11 @@
+---
+layout: doc
+outline: deep
+
+---
+
+
+
 # HTTP的建立
 
 ## 1. OSI七层模型与TCP/IP四层模型
@@ -95,9 +103,9 @@
 
 
 
-## 4. [版本区别](https://dayswithvenki.top/posts/http_versions)
+## 4. [版本差异](/Web/HTTP版本差异)
 
-## 5. [HTTP缓存](https://dayswithvenki.top/posts/cache)
+## 5. [HTTP缓存](/Web/HTTP缓存)
 
 
 

@@ -4,9 +4,9 @@ layout: home
 title: GoLang
 
 hero:
-  name: "JavaScript"
-  text: "弱类型、单线程的\n高级脚本语言"
-  tagline: "JS 代码相关练习"
+  name: "GoLang"
+  text: "强类型、多线程的\n高级语言"
+  tagline: "Go 后端开发"
   image:
     src: ./assets/golang.svg
     alt: Go
@@ -23,6 +23,10 @@ hero:
 
 <style lang="scss" module>
     :root {
-       
+        --vp-home-hero-name-color: transparent;
+        --vp-home-hero-name-background: -webkit-linear-gradient(78deg, #5433ff 30%, #20bdff, #a5fecb);
+        --vp-home-hero-image-background-image: linear-gradient(to right, #5433ff, #20bdff, #a5fecb);
+        --vp-home-hero-image-filter: blur(40px);
+        -webkit-background-clip: text;
     }
 </style>

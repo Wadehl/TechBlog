@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.7",
-    "vitepress": "^1.0.0-alpha.74"
+    "vitepress": "^1.0.0-alpha.75"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-mindmap": "^9.3.0",

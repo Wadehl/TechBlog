@@ -36,6 +36,5 @@ features:
         --vp-home-hero-image-background-image: linear-gradient( 15deg, #f7d336 65%, #8ae99c 30% );
         --vp-home-hero-image-filter: blur(40px);
         -webkit-background-clip: text;
-
     }
 </style>

@@ -4,9 +4,9 @@ layout: home
 title: Python
 
 hero:
-  name: "JavaScript"
-  text: "弱类型、单线程的\n高级脚本语言"
-  tagline: "JS 代码相关练习"
+  name: "Python"
+  text: "弱类型、可多线程的\n高级脚本语言"
+  tagline: "Python Django后端开发"
   image:
     src: ./assets/Python.svg
     alt: Python
@@ -23,6 +23,10 @@ hero:
 
 <style lang="scss" module>
     :root {
-       
+        --vp-home-hero-name-color: transparent;
+        --vp-home-hero-name-background: -webkit-linear-gradient(78deg, #be93c5 30%, #7bc6cc);
+        --vp-home-hero-image-background-image: linear-gradient(to right, #be93c5, #7bc6cc);
+        --vp-home-hero-image-filter: blur(40px);
+        -webkit-background-clip: text;
     }
 </style>

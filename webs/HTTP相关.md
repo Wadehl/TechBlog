@@ -103,9 +103,9 @@ outline: deep
 
 
 
-## 4. [版本差异](/Web/HTTP版本差异)
+## 4. [版本差异](/webs/HTTP版本差异)
 
-## 5. [HTTP缓存](/Web/HTTP缓存)
+## 5. [HTTP缓存](/webs/HTTP缓存)
 
 
 

@@ -1,15 +1,15 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-title: Vue
+title: vue
 
 hero:
-  name: "Vue"
+  name: "vue"
   text: "渐进式\nJavaScript 框架"
   tagline: "与Vue相关的内容整理以及关键代码的实现"
   image:
     src: /Vue-logo.png
-    alt: Vue
+    alt: vue
   # actions:
     # - theme: brand
       # text: Markdown Examples

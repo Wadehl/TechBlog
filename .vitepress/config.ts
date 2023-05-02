@@ -23,18 +23,18 @@ export default withMermaid(
                         {
                             text: '前端',
                             items: [
-                                {text: 'JavaScript', link: '/javaScript/'},
-                                {text: 'Vue', link: '/vue/'},
+                                {text: 'javascript', link: '/javaScript/'},
+                                {text: 'vue', link: '/vue/'},
                                 {text: '杂七杂八🥘', link: '/front/'}
                                 // {text: 'TypeScript', link: '/ts/'},
-                                // {text: 'React', link: '/react/'}
+                                // {text: 'react', link: '/react/'}
                             ]
                         },
                         {
                             text: '后端',
                             items: [
-                                {text: 'Python-Web', link: '/python/'},
-                                {text: 'Go-Web', link: '/go/'}
+                                {text: 'python-Web', link: '/python/'},
+                                {text: 'go-Web', link: '/go/'}
                             ]
                         }
                     ]
@@ -42,7 +42,7 @@ export default withMermaid(
                 {
                     text: 'Preload',
                     items: [
-                        {text: '计网', link: '/web/'},
+                        {text: '计网', link: '/webs/'},
                         {text: '算法', link: '/algorithm/'}
                     ]
                 },
@@ -60,38 +60,38 @@ export default withMermaid(
                             items: [
                                 {
                                     text: 'Ajax',
-                                    link: '/JavaScript/AJAX'
+                                    link: '/javascript/AJAX'
                                 },
                                 {
                                     text: '柯里化',
-                                    link: '/JavaScript/curried'
+                                    link: '/javascript/curried'
                                 },
                                 {
                                     text: '防抖与节流',
-                                    link: '/JavaScript/debounce&throttle'
+                                    link: '/javascript/debounce&throttle'
                                 },
                                 {
                                     text: 'Array, Object扁平化',
-                                    link: '/JavaScript/flattern'
+                                    link: '/javascript/flattern'
                                 },
                                 {
                                     text: 'instanceof',
-                                    link: '/JavaScript/instanceof'
+                                    link: '/javascript/instanceof'
                                 }
                             ]
                         },
-                        {text: 'TypeScript', link: '/Typescript/'},
+                        {text: 'TypeScript', link: '/typescript/'},
                         {
-                            text: 'Vue',
+                            text: 'vue',
                             collapsed: true,
                             items: [
                                 {
                                     text: 'Vue2双向绑定',
-                                    link: '/Vue/vue2-easy-binding'
+                                    link: '/vue/vue2-easy-binding'
                                 },
                                 {
                                     text: 'vDOM与diff',
-                                    link: '/Vue/vue-vDom'
+                                    link: '/vue/vue-vDom'
                                 }
                             ]
                         },
@@ -101,19 +101,19 @@ export default withMermaid(
                             items: [
                                 {
                                     text: '前端权限认证方式',
-                                    link: '/Front/前端权限认证方式'
+                                    link: '/front/前端权限认证方式'
                                 },
                                 {
                                     text: '浏览器渲染过程',
-                                    link: '/Front/浏览器渲染过程'
+                                    link: '/front/浏览器渲染过程'
                                 },
                                 {
                                     text: '前端性能优化',
-                                    link: '/Front/前端性能优化'
+                                    link: '/front/前端性能优化'
                                 },
                                 {
                                     text: '前端性能优化——实战',
-                                    link: '/Front/前端性能优化——实战'
+                                    link: '/front/前端性能优化——实战'
                                 }
                             ]
                         }
@@ -124,12 +124,12 @@ export default withMermaid(
                     collapsed: true,
                     items: [
                         {
-                            text: 'Go',
+                            text: 'go',
                             collapsed: true,
                             items: []
                         },
                         {
-                            text: 'Python',
+                            text: 'python',
                             collapsed: true,
                             items: []
                         }
@@ -143,12 +143,12 @@ export default withMermaid(
                             text: '计网',
                             collapsed: true,
                             items: [
-                                {text: 'CDN', link: '/Web/CDN'},
-                                {text: 'HTTP版本差异', link: '/Web/HTTP版本差异'},
-                                {text: 'HTTP相关', link: '/Web/HTTP相关'},
-                                {text: 'HTTP缓存', link: '/Web/HTTP缓存'},
-                                {text: 'WebSocket', link: '/Web/WebSocket'},
-                                {text: '网络安全', link: '/Web/网络安全'},
+                                {text: 'CDN', link: '/webs/CDN'},
+                                {text: 'HTTP版本差异', link: '/webs/HTTP版本差异'},
+                                {text: 'HTTP相关', link: '/webs/HTTP相关'},
+                                {text: 'HTTP缓存', link: '/webs/HTTP缓存'},
+                                {text: 'WebSocket', link: '/webs/WebSocket'},
+                                {text: '网络安全', link: '/webs/网络安全'},
                             ]
                         },
                         {

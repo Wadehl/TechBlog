@@ -23,7 +23,7 @@ export default withMermaid(
                         {
                             text: '前端',
                             items: [
-                                {text: 'javascript', link: '/javaScript/'},
+                                {text: 'javascript', link: '/javascript/'},
                                 {text: 'vue', link: '/vue/'},
                                 {text: '杂七杂八🥘', link: '/front/'}
                                 // {text: 'TypeScript', link: '/ts/'},

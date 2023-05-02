@@ -20,7 +20,7 @@ outline: deep
 | 链路层       | 链路层       | 网络接口层     |
 | 物理层       | 物理层       | -              |
 
-![网络模型 功能](https://img-blog.csdnimg.cn/20201028134158932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3eTAzMjQ=,size_16,color_FFFFFF,t_70#pic_center)
+![img](/web.png)
 
 ## 2. TCP握手协议（传输层、端对端）
 

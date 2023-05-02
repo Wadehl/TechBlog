@@ -8,7 +8,7 @@ hero:
   text: "前端-大锅炖"
   tagline: "性能优化、权限认证、渲染过程...一切与前端相关的不知道怎么精准归类的内容"
   image:
-    src: ./assets/logo-f.png
+    src: Front-logo.png
     alt: 大锅
 features:
   - title: 前端权限认证方式

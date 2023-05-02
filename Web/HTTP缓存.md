@@ -46,7 +46,7 @@ HTTP缓存分为强缓存和协商缓存，强缓存是指浏览器不需要发�
 - 'no-cache'并不意味着不可以进行缓存，而是每次在使用缓存资源时，都需要向服务器发送请求，由服务器来判断缓存是否有效，有效才会使用缓存（`协商缓存`） - 'no-store'才表示不可以进行缓存
 - `Chrome`强制刷新(`Ctrl+F5`)的实现方式为，在请求的首部添加`pragma: no-cache`与`cache-control: no-cache`实现
 
-​	![image-20230501214334004](./assets/image-20230501214334004.png)
+​	![image-20230501214334004](/image-20230501214334004.png)
 
 - `max-age`的值为非0或设置了大于请求日期的`Expires`才可能命中强缓存，并且只有`cache-control`不存在`no-cache`/`no-store`以及`pragma`的时候，才会命中强缓存
 - `max-age=0`的时候，与`cache-control: no-cache`效果类似
@@ -97,7 +97,7 @@ HTTP缓存分为强缓存和协商缓存，强缓存是指浏览器不需要发�
 
 ### 缓存总流程
 
-![整体流程](./assets/161233e6685e5e73tplv-t2oaga2asx-zoom-in-crop-mark4536000.webp)
+![整体流程](/161233e6685e5e73tplv-t2oaga2asx-zoom-in-crop-mark4536000.webp)
 
 
 
@@ -107,7 +107,7 @@ HTTP缓存分为强缓存和协商缓存，强缓存是指浏览器不需要发�
 
 第一次访问本页的时候：
 
-![第一次请求资源](.\assets\image-20230501213045868.png)
+![第一次请求资源](/image-20230501213045868.png)
 
 可以看到响应头有`Cache-Control: no-cache`以及`ETag`与`Last-Modified`，说明，此时为协商缓存。
 
@@ -115,7 +115,7 @@ HTTP缓存分为强缓存和协商缓存，强缓存是指浏览器不需要发�
 
 
 
-![image-20230501233831904](./assets/image-20230501233831904.png)
+![image-20230501233831904](/image-20230501233831904.png)
 
 可以看到，此时`If-None-Match`与`ETag`是匹配的，`If-Modified-Since`也符合`Last-Modified`的要求，因此，服务器返回`304`响应，允许使用本地缓存。
 

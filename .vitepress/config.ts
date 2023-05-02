@@ -7,6 +7,7 @@ export default withMermaid(
         title: "Kevin's TechBlog",
         // description: "Kevin's TechBlog",
         lang: 'zh-CN',
+        outDir: './docs',
         themeConfig: {
             // https://vitepress.dev/reference/default-theme-config
             logo: '/logo.png',

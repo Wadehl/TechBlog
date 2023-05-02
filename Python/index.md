@@ -8,7 +8,7 @@ hero:
   text: "弱类型、可多线程的\n高级脚本语言"
   tagline: "Python Django后端开发"
   image:
-    src: ./assets/Python.svg
+    src: Python-logo.svg
     alt: Python
 #features:
 #  - title: 手写代码 - Ajax

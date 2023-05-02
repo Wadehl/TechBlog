@@ -8,7 +8,7 @@ hero:
   text: "渐进式\nJavaScript 框架"
   tagline: "与Vue相关的内容整理以及关键代码的实现"
   image:
-    src: ./assets/logo.png
+    src: /Vue-logo.png
     alt: Vue
   # actions:
     # - theme: brand

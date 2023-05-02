@@ -79,6 +79,7 @@ export default withMermaid(
                                 }
                             ]
                         },
+                        {text: 'TypeScript', link: '/Typescript/'},
                         {
                             text: 'Vue',
                             collapsed: true,
@@ -141,9 +142,12 @@ export default withMermaid(
                             text: '计网',
                             collapsed: true,
                             items: [
+                                {text: 'CDN', link: '/Web/CDN'},
                                 {text: 'HTTP版本差异', link: '/Web/HTTP版本差异'},
                                 {text: 'HTTP相关', link: '/Web/HTTP相关'},
                                 {text: 'HTTP缓存', link: '/Web/HTTP缓存'},
+                                {text: 'WebSocket', link: '/Web/WebSocket'},
+                                {text: '网络安全', link: '/Web/网络安全'},
                             ]
                         },
                         {

@@ -8,6 +8,11 @@ export default withMermaid(
         // description: "Kevin's TechBlog",
         lang: 'zh-CN',
         outDir: './docs',
+        head: [
+            [
+                'link', {rel: 'icon', href: '/logo.png'},
+            ]
+        ],
         themeConfig: {
             // https://vitepress.dev/reference/default-theme-config
             logo: '/logo.png',
@@ -158,6 +163,7 @@ export default withMermaid(
                         }
                     ]
                 },
+
             ],
 
             socialLinks: [
@@ -167,6 +173,15 @@ export default withMermaid(
                     link: 'https://gitee.com/Wadehl'
                 }
             ],
+
+            search: {
+                provider: 'local'
+            },
+
+            footer: {
+                message: 'Released under the MIT License.',
+                copyright: 'Copyright © 2022-present Kevin Kwok'
+            }
         },
 
         vite: {

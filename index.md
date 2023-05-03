@@ -74,9 +74,18 @@ features:
         --c-yellow-light: #f7d336;
         --c-green-light: #8ae99c;
     }
+
 </style>
 
+[//]: # ()
+[//]: # (<div class="coding-container" )
 
+[//]: # (	style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 1.5rem;">)
 
+[//]: # (	<a href="https://wakatime.com"><img src="https://wakatime.com/share/@f5b05265-20b6-4297-b7b8-acdc8b50554f/8e04dc8f-3c35-4b91-b86c-a4d9a1fd8b12.png" /></a>)
+
+[//]: # (    <a href="https://wakatime.com"><img src="https://wakatime.com/share/@f5b05265-20b6-4297-b7b8-acdc8b50554f/28941bf4-9711-4e93-86d3-55948b4b3e66.png" /></a>)
+
+[//]: # (</div>)
 
 

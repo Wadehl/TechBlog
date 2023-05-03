@@ -614,7 +614,9 @@ const Compiler = (element, vm) => {
 
 至此，一个基于`Object.defineProperty`的简易双向绑定实现了。:dark_sunglasses:
 
-![image-20230426185717202](..\assets\images\image-20230426185717202.png)
+![image-20230426185717202](/assets/images/image-20230426185717202.png)
+
+[//]: # (<vImageViewer src="/assets/images/image-20230426185717202.png" alt="双向绑定成功"/> )
 
 
 

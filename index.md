@@ -3,7 +3,7 @@ layout: home
 hero:
   name: "Kevin's TechBlog"
   text: "一个简单的技术分享、知识记录博客"
-  tagline: "主要技术栈 :\n前端Vue, javascript, TypeScript  \n后端Django, go, Nodejs	"
+  tagline: "主要技术栈 :\n前端Vue, JavaScript, TypeScript  \n后端Django, Go	"
   image:
     src: /logo.png
     alt: Kevin's TechBlog

@@ -1,3 +1,8 @@
+---
+layout: doc
+outline: deep
+---
+
 <style>
     .image-row {
         display: flex;

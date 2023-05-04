@@ -1,3 +1,8 @@
+---
+layout: doc
+outline: deep
+---
+
 # Vue 虚拟DOM与Diff算法
 
 ## 参考链接

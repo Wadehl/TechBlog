@@ -1,3 +1,8 @@
+---
+layout: doc
+outline: deep
+---
+
 # 深入浅出Typescript
 
 ## 基础类型

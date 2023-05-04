@@ -179,7 +179,7 @@ export default withMermaid(
                 options: {
                     appId: '1BAFNJ6EKW',
                     apiKey: '39ce531d0df9398734ef70ad4e765558',
-                    indexName: 'Tech-DaysWithVenki',
+                    indexName: 'tech-dayswithvenki',
                     placeholder: '请输入搜索内容',
                     initialQuery: 'Vue'
                 }

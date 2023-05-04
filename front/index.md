@@ -29,12 +29,14 @@ features:
     link: /front/前端性能优化
 ---
 
-<style lang="scss" module>
-    :root {
-        --vp-home-hero-name-color: transparent;
-        --vp-home-hero-name-background: -webkit-linear-gradient( 78deg, #f7d336 30%, #8ae99c);
-        --vp-home-hero-image-background-image: linear-gradient( 15deg, #f7d336 65%, #8ae99c 30% );
-        --vp-home-hero-image-filter: blur(40px);
-        -webkit-background-clip: text;
-    }
-</style>
+<script setup>
+  import { useRoute } from "vitepress";
+  
+  const { path } = useRoute();
+  if(path === '/front/' || path === '/front/index.html') {
+    document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
+    document.documentElement.style.setProperty('--vp-home-hero-name-background', 'linear-gradient(78deg, #f7d336 30%, #8ae99c)');
+    document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(15deg, #f7d336 65%, #8ae99c 30%)');
+    document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(40px)');
+  }
+</script>

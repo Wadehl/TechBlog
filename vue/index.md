@@ -27,14 +27,15 @@ features:
   details: Object.defineProperty, DocumentFragment, Pub/Sub Pattern 实现简单的Vue2双向绑定。
   link: /vue/vue-vDom	
 ---
-
-<style lang="scss" module>
-    :root {
-        --vp-home-hero-name-color: transparent;
-        --vp-home-hero-name-background: -webkit-linear-gradient(315deg,#42d392 25%,#647eff);
-        --vp-home-hero-image-background-image: linear-gradient(315deg,#42d392 25%,#647eff);
-        --vp-home-hero-image-filter: blur(56px);
-        -webkit-background-clip: text ;
-    }
-</style>
-
+<script setup>
+  import { useRoute } from "vitepress";
+  
+  const { path } = useRoute();
+  if(path === '/vue/' || path === '/vue/index.html') {
+    document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
+    document.documentElement.style.setProperty('--vp-home-hero-name-background', '-webkit-linear-gradient(315deg,#42d392 25%,#647eff)');
+    document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(315deg,#42d392 25%,#647eff)');
+    document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(56px)');
+    document.documentElement.style.setProperty('-webkit-background-clip', 'text');
+  }
+</script>

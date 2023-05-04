@@ -33,27 +33,26 @@ features:
     link: /javascript/debounce&throttle 
 ---
 
-<style lang="scss" module>
-    :root {
-        --vp-home-hero-name-color: transparent;
-        --vp-home-hero-name-background: -webkit-linear-gradient(135deg, #FFC107, #FF8F00);
-        --vp-home-hero-image-background-image: linear-gradient(135deg, #FFC107 30%, #FF8F00);
-        /*--vp-home-hero-image-background-image: linear-gradient( 15deg, #f7d336 65%, #8ae99c 30% );*/
-        --vp-home-hero-image-filter: blur(40px);
-        -webkit-background-clip: text;
-        --c-yellow-light: #f7d336;
-        --c-green-light: #8ae99c;
-        --vp-button-brand-border: #ecb732;
-        --vp-button-brand-text: #2c3e50;
-        --vp-button-brand-bg: var(--c-yellow);
-        --vp-button-brand-hover-border: var(--c-yellow-light);
-        --vp-button-brand-hover-text: #2c3e50;
-        --vp-button-brand-hover-bg: var(--c-yellow-light);
-        --vp-button-brand-active-border: #ecb732;
-        --vp-button-brand-active-text: #2c3e50;
-        --vp-button-brand-active-bg: var(--vp-button-brand-bg);
-        --c-yellow-dark: #ecb732;
-        --c-yellow: #ffd859;
-        --vp-c-brand: var(--c-yellow);
-    }
-</style>
+<script setup>
+  import { useRoute } from "vitepress";
+  
+  const { path } = useRoute();
+  if(path === '/javascript/' || path === '/javascript/index.html') {
+    document.documentElement.style.setProperty('--c-yellow', '#FFD859');
+    document.documentElement.style.setProperty('--c-yellow-dark', '#ECB732');
+    document.documentElement.style.setProperty('--c-yellow-light', '#F7D336');
+    document.documentElement.style.setProperty('--vp-home-hero-name-background', '-webkit-linear-gradient(135deg, #FFC107, #FF8F00)');
+    document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(135deg, #FFC107 30%, #FF8F00)');
+    document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(40px)');
+    document.documentElement.style.setProperty('--vp-button-brand-border', '#ECB732');
+    document.documentElement.style.setProperty('--vp-button-brand-text', '#2C3E50');
+    document.documentElement.style.setProperty('--vp-button-brand-bg', 'var(--c-yellow)');
+    document.documentElement.style.setProperty('--vp-button-brand-hover-border', 'var(--c-yellow-light)');
+    document.documentElement.style.setProperty('--vp-button-brand-hover-text', '#2C3E50');
+    document.documentElement.style.setProperty('--vp-button-brand-hover-bg', 'var(--c-yellow-light)');
+    document.documentElement.style.setProperty('--vp-button-brand-active-border', '#ECB732');
+    document.documentElement.style.setProperty('--vp-button-brand-active-text', '#2C3E50');
+    document.documentElement.style.setProperty('--vp-button-brand-active-bg', 'var(--vp-button-brand-bg)');
+    document.documentElement.style.setProperty('--vp-c-brand', 'var(--c-yellow)');
+  }
+</script>

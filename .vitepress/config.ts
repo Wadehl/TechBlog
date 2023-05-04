@@ -175,7 +175,14 @@ export default withMermaid(
             ],
 
             search: {
-                provider: 'local'
+                provider: 'algolia',
+                options: {
+                    appId: '1BAFNJ6EKW',
+                    apiKey: '39ce531d0df9398734ef70ad4e765558',
+                    indexName: 'Tech-DaysWithVenki',
+                    placeholder: '请输入搜索内容',
+                    initialQuery: 'Vue'
+                }
             },
 
             footer: {

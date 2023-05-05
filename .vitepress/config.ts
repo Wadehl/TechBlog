@@ -117,6 +117,10 @@ export default withMermaid(
                                     link: '/front/前端性能优化'
                                 },
                                 {
+                                    text: '前端性能优化 New',
+                                    link: '/front/前端性能优化 New'
+                                },
+                                {
                                     text: '前端性能优化——实战',
                                     link: '/front/前端性能优化——实战'
                                 }
@@ -136,7 +140,51 @@ export default withMermaid(
                         {
                             text: 'python',
                             collapsed: true,
-                            items: []
+                            items: [
+                                {
+                                    text: 'Python爬虫',
+                                    collapsed: true,
+                                    items: [
+                                        {
+                                            text: '基础知识',
+                                            link: '/python/crawler/Python1'
+                                        },
+                                        {
+                                            text: 'Request库的使用',
+                                            link: '/python/crawler/Python2'
+                                        },
+                                        {
+                                            text: '数据解析',
+                                            link: '/python/crawler/Python3'
+                                        },
+                                        {
+                                            text: 'Re模块',
+                                            link: '/python/crawler/Python4'
+                                        },
+                                        {
+                                            text: 'Bs模块',
+                                            link: '/python/crawler/Python5'
+                                        },
+                                        {
+                                            text: 'Xpath模块',
+                                            link: '/python/crawler/Python6'
+                                        },
+                                        {
+                                            text: '爬虫实战',
+                                            link: '/python/crawler/Python7'
+                                        },
+                                        {
+                                            text: 'Python多线程',
+                                            link: '/python/crawler/Python8'
+                                        }
+                                    ]
+                                },
+                                {
+                                    text: 'Django',
+                                    collapsed: true,
+                                    items: []
+                                }
+                            ]
                         }
                     ]
                 },

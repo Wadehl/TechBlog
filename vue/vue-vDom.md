@@ -3,38 +3,19 @@ layout: doc
 outline: deep
 ---
 
-# Vue 虚拟DOM与Diff算法
+# Vue 虚拟DOM
 
 ## 参考链接
 
+https://juejin.cn/post/7130538545063657486
 
+## VNode结构
 
-## 源码地址
-
-
-
-## VDOM - VNode结构
-
-```js
-// vDom.js
-class vNode {
-  constructor(tag, props, children, text, elm, context) {
-    /*
-        @param {String} tag 节点标签
-        @param {VNodeData} attrs 节点数据: props, attrs, key, class, directives ...
-        @param {Array<VNode>} children 子节点
-        @param {String} text 文本
-        @param {Node} elm 对应的真实DOM节点
-        @param {VueComponent} context 组件实例
-    */
-    this.tag = tag;  
-    this.props = props;  
-    this.children = children; 
-    this.text = text;
-    this.elm = elm;
-    this.context = context;
-    this.key = data && this.data.key; // diff的唯一标识符
-  }
+```ts
+interface vnode {
+    type: String;
+    props: Object;
+    children: vnode[];
 }
 ```
 
@@ -42,116 +23,65 @@ class vNode {
 
 ```vue
 <template>
-	<div class="vnode" :class={ 'show-node': isShow } v-show="isShow" >
-        This is a VNode
+	<div id="hello">
+        Venki!
     </div>
 </template>
 
-// 一个VNode
 <script>
-	function render() {
-        return new VNode(
-        	'div',
-            {
-                staticClass: 'vnode',
-                class: {
-                	'show-node': isShow
-            	},
-                /*
-            	directives: [
-                    {
-                        rawName: 'v-show',
-                        name: 'show',
-                        value: isShow
-                    }
-            	],
-            	*/
-                show: isShow,
-            	[ new VNode(undefined, undefined, undefined, 'This is a VNode') ]
-            }
-        )
+	const vnode = {
+        type: 'div',
+        props: {
+            id: 'hello'
+        },
+        children: [
+            "Venki!"
+        ]
     }
-    
-    /*
-    	生成的VNode格式如下:
-    		{
-    			tag: 'div',
-    			props: {
-    				show: isShow,
-    				staticClass: 'vnode',
-    				class: {
-    					'show-node': isShow
-    				}
-    			},
-    			text: undefined,
-    			children: [
-    				{
-    					tag: undefined,
-    					props: undefined,
-    					text: 'This is a VNode',
-    					children: undefined
-    				}
-    			]
-    		}
-    */
 </script>
 ```
 
 :::
-::: tip
 
-一些暴露的封装好的`工具函数`
 
-```js
-export const createEmptyNode = (text) => {
-    const node = new VNode();
-    node.text = text;
-    node.isComment = true;
-    return node;
-}
 
-export const createTextNode = (val) => {
-    return new VNode(undefined, undefined, undefined, String(val));
-}
+## 虚拟DOM优缺点
 
-export const cloneVNode = (vnode) => {
-    const cloned = new VNode(
-		vnode.tag,
-        vnode.props,
-        vnode.text,
-        vnode.children
-    )
-    cloned.key = vnode.key;
-    clone.isCloned = true;
-    return cloned;
-}
-```
+### 优点
+
+- 降低性能消耗
+- `diff`算法减少重绘与回流
+- 跨平台
+
+### 缺点
+
+- 首次加载相比直接的`innerHTML`插入，多了生成虚拟DOM的步骤
+- 无法实现极致的性能优化，也是因为需要生成虚拟DOM
+
+::: tip 虚拟DOM一定比操作原生DOM要快吗
+
+- 这是一个性能 Vs. 可维护性的问题。框架的意义在于为你掩饰底层的DOM操作，让你可以用更加声明式的方式描述你的目的，从而使得代码能够更简单的维护。
+
+- 在这一情况下，**没有任何框架可以比手动优化DOM操作更快**，==因为框架的DOM操作需要应对任何上层API可能产生的操作，它的实现必须有普适性==
+
+- 在构建实际应用的时候，不可能为每一个地方去做手动优化，**框架的意义在于，它能够在你不需要进行额外优化的情况下，提供一个较好的性能**
+
+
+
+**总结：**
+
+​	虚拟DOM的意义并不是提升性能，而是提升开发的效率，使用框架使得我们不需要考虑对DOM的操作，只需要关心数据的改变，使用`JQuery`的时候，数据改变后我们还需要进行`$(#id).append(node)`的操作。
+
+​	并且，事实上，“合理地”直接操作DOM性能永远是最高的，“合理”指的是尽量减少操作的次数。所以，直接操作DOM是上限最高，但是下限较低的操作，而虚拟DOM提供了一个较高的下限，并且降低了使用者的心智负担。
 
 :::
 
 
 
-## VDOM - Render
+## Diff算法
 
-### 1. _createElement
+::: tip
 
-```js
-// _createElement主要是对tag的逻辑判断
-// (1) tagName绑定在attrs中 
-if(isDef(attrs) && isDef(attrs.is)) {
-    tag = attrs.is;
-}
-// (2) tagName不存在
-if(!tag) {
-    return createEmptyNode();
-}
+​	上面说到，如果能“合理地”直接操作DOM元素，它的性能是最好的。那么其实虚拟DOM的实现，也同样是在进行“合理地”操作DOM元素，只是这个“合理”操作是框架底层实现的，而实现的关键方法就是在于`diff`算法。
 
-// (3) tagName 是 String类型
-if(typeof tag === 'string') {
-    return new VNode(tag, props, children, undefined, undefined, context);
-} else {
-// (4) tagName 非 String类型
-    return createComponent(tag, props, context, children);
-}
-```
-
+:::

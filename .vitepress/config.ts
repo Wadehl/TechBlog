@@ -60,6 +60,28 @@ export default withMermaid(
                     collapsed: true,
                     items: [
                         {
+                            text: 'JavaScript基础',
+                            collapsed: true,
+                            items: [
+                                {
+                                    text: 'var,let,const',
+                                    link: '/javascript/var,let,const'
+                                },
+                                {
+                                    text: 'this',
+                                    link: '/javascript/this'
+                                },
+                                {
+                                    text: '闭包',
+                                    link: '/javascript/闭包'
+                                },
+                                {
+                                    text: '垃圾回收机制GC',
+                                    link: '/javascript/垃圾回收机制'
+                                }
+                            ]
+                        },
+                        {
                             text: 'JavaScript手写系列',
                             collapsed: true,
                             items: [
@@ -74,6 +96,10 @@ export default withMermaid(
                                 {
                                     text: '防抖与节流',
                                     link: '/javascript/debounce&throttle'
+                                },
+                                {
+                                    text: '图片懒加载',
+                                    link: '/javascript/lazyload'
                                 },
                                 {
                                     text: 'Array, Object扁平化',

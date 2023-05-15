@@ -90,6 +90,10 @@ export default withMermaid(
                                     link: '/javascript/AJAX'
                                 },
                                 {
+                                    text: 'Promise',
+                                    link: '/javascript/Promise'
+                                },
+                                {
                                     text: '柯里化',
                                     link: '/javascript/curried'
                                 },
@@ -255,7 +259,7 @@ export default withMermaid(
                     apiKey: '39ce531d0df9398734ef70ad4e765558',
                     indexName: 'tech-dayswithvenki',
                     placeholder: '请输入搜索内容',
-                    initialQuery: 'Vue'
+                    initialQuery: 'JS'
                 }
             },
 

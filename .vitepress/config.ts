@@ -94,6 +94,10 @@ export default withMermaid(
                                     link: '/javascript/Promise'
                                 },
                                 {
+                                    text: 'Promise并发调度',
+                                    link: '/javascript/Promise并发调度'
+                                },
+                                {
                                     text: '柯里化',
                                     link: '/javascript/curried'
                                 },

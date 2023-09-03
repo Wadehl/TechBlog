@@ -1,5 +1,11 @@
 # Vue3 Reactivity
 
+## 线上DEMO
+
+stackBlitz:https://stackblitz.com/edit/stackblitz-webcontainer-api-starter-pzbq1g?file=index.html
+
+github地址: https://github.com/Wadehl/vue-easy-reactivity
+
 ## Vue2
 
 在Vue2里面，响应式主要是通过`Object.defineProperty`的`get()与set()`来收集依赖与通知依赖更新，总的来说就是`Object.defineProperty`+**发布订阅模式**实现的，而因为`Object.defineProperty`无法深层监听，所以需要递归实现深度监听。并且，由于原生只支持`get`与`set`，当我们向`Object`新增键或删除键的时候，这些都是不会被监听到的，需要调用`Vue.$set`才能实现新增的监听。
@@ -283,3 +289,14 @@ const convert = (val) => {
 }
 ```
 
+
+
+## 总结
+
+与`Vue2`相比，`Reactivity`改用了`Proxy`的方式实现了响应式，这样比起原本的`get/set`更多出了`hasOwn/delete/has`等多种API的响应式支持。不仅如此，通过`effect+track/trigger`实现的依赖收集替代了之前的`Watcher`的发布订阅者模式。另外，值得一提的是，`Vue3`中在响应式设计上考虑了层级嵌套依赖收集与清理不必要依赖的问题。
+
+:::tips
+
+在`Vue 3.2`中使用二进制标记位方式选择性增加与清理依赖dep，代替了原本`cleanup`（全清空）的方案，进一步优化了性能。[PR](https://github.com/vuejs/core/pull/4017)
+
+:::

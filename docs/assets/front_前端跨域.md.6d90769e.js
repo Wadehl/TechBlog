@@ -1,1 +1,0 @@
-import{_ as t,o as e,c as r}from"./chunks/framework.3bbe0c8b.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"front/前端跨域.md","filePath":"front/前端跨域.md"}'),a={name:"front/前端跨域.md"};function o(n,s,c,_,f,p){return e(),r("div")}const m=t(a,[["render",o]]);export{i as __pageData,m as default};

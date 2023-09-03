@@ -1,1 +1,0 @@
-import{_ as a,o as l,c as e,R as i}from"./chunks/framework.3bbe0c8b.js";const _=JSON.parse('{"title":"CDN","description":"","frontmatter":{},"headers":[],"relativePath":"webs/CDN.md","filePath":"webs/CDN.md"}'),t={name:"webs/CDN.md"},o=i("",11),c=[o];function n(r,p,s,d,h,N){return l(),e("div",null,c)}const C=a(t,[["render",n]]);export{_ as __pageData,C as default};

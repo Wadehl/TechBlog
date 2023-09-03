@@ -116,6 +116,10 @@ export default withMermaid(
                                 {
                                     text: 'instanceof',
                                     link: '/javascript/instanceof'
+                                },
+                                {
+                                    text: '有时间限制的缓存',
+                                    link: '/javascript/有时间限制的缓存'
                                 }
                             ]
                         },
@@ -124,6 +128,10 @@ export default withMermaid(
                             text: 'vue',
                             collapsed: true,
                             items: [
+                                {
+                                   text: 'Vue3响应式系统',
+                                   link: '/vue/vue3-Reactivity'
+                                },
                                 {
                                     text: 'Vue2双向绑定',
                                     link: '/vue/vue2-easy-binding'

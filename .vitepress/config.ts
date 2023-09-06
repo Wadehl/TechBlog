@@ -129,6 +129,10 @@ export default withMermaid(
                             collapsed: true,
                             items: [
                                 {
+                                  text: 'Vue3 diff算法详解',
+                                  link: '/vue/vue-diff'
+                                },
+                                {
                                    text: 'Vue3响应式系统',
                                    link: '/vue/vue3-reactivity'
                                 },

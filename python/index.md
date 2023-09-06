@@ -8,7 +8,7 @@ hero:
   text: "弱类型、可多线程的\n高级脚本语言"
   tagline: "python Django后端开发与爬虫"
   image:
-    src: Python-logo.svg
+    src: /Python-logo.svg
     alt: python
 features:
   - title: Python 爬虫 —— 基础

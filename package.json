@@ -9,7 +9,7 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "vitepress": "^1.0.0-alpha.75",
+    "vitepress": "^1.0.0-rc.10",
     "vitepress-plugin-back-to-top": "^1.0.1",
     "vitepress-plugin-mermaid": "^2.0.14"
   },

@@ -317,3 +317,9 @@ for(i=toBePatched - 1; i>=0; i--) {
 因为，没有出现在递增子序列内的节点代表他们的位置被前移了，所以把这些节点前移即可。
 
 ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1dcba8989ae348e6af85333a22280da2~tplv-k3u1fbpfcp-jj-mark:1512:0:0:0:q75.awebp)
+
+
+
+## 附加内容: GetSequence算法的实现
+
+[LIS算法与Vue的LIS算法的实现思路](/algorithm/LIS.html)

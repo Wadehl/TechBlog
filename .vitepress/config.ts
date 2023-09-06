@@ -130,7 +130,7 @@ export default withMermaid(
                             items: [
                                 {
                                    text: 'Vue3响应式系统',
-                                   link: '/vue/vue3-Reactivity'
+                                   link: '/vue/vue3-reactivity'
                                 },
                                 {
                                     text: 'Vue2双向绑定',
@@ -249,11 +249,12 @@ export default withMermaid(
                         {
                             text: '算法',
                             collapsed: true,
-                            items: []
+                            items: [
+                                {text: 'LIS', link: '/algorithm/LIS'},
+                            ]
                         }
                     ]
-                },
-
+                }
             ],
 
             socialLinks: [

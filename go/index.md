@@ -8,7 +8,7 @@ hero:
   text: "强类型、多线程的\n高级语言"
   tagline: "go 后端开发"
   image:
-    src: Go-logo.svg
+    src: /Go-logo.svg
     alt: go
 #features:
 #  - title: 手写代码 - Ajax

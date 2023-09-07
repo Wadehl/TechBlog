@@ -11,9 +11,19 @@
   "dependencies": {
     "vitepress": "^1.0.0-rc.10",
     "vitepress-plugin-back-to-top": "^1.0.1",
+    "vitepress-plugin-comment-with-giscus": "^1.1.7",
     "vitepress-plugin-mermaid": "^2.0.14"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3",
     "vitepress-plugin-nprogress": "^0.0.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "remark-shiki-twoslash>shiki": "^0.14.1",
+      "shiki-twoslash>shiki": "^0.14.1"
+    }
   }
 }

@@ -3,3 +3,6 @@ package-lock.json
 /.pnpm-store/*
 /.pnpm-store/
 /.pnpm-store/v3/
+/.vitepress/cache/
+/.vitepress/cache/*
+

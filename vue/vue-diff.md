@@ -1,3 +1,9 @@
+---
+outline: deep
+---
+
+
+
 # diff与patch算法
 
 ## Vue2与Vue3 diff概括
@@ -94,13 +100,15 @@ const patchKeyedChildren = (c1, c2, container, parentAnchor, parentComponent, pa
     <li key="a">c</li>
     <li key="a">d</li>
 </ul>
+
+
 ```
 
-![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/074804630b39471e809def7080e9614d~tplv-k3u1fbpfcp-jj-mark:1512:0:0:0:q75.awebp)
+![diff](../public/diff/diff-1.webp)
 
 第一步执行完，此时会对`a, b`两个进行`patch`。当`i=2`的时候，由于此时两个节点不一致，所以进入到尾部对比流程。
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8b9733b3694f4c81a22015672b56cdf0~tplv-k3u1fbpfcp-jj-mark:1512:0:0:0:q75.awebp)
+![diff](../public/diff/diff-2.webp)
 
 当前执行完后，会完成`c, d`两个节点的`patch`操作，此时由于`e1<i`，因此尾对比流程结束了，发现多了一个`key=e`的新节点，因此我们需要进行新增节点操作。
 
@@ -152,9 +160,9 @@ const patchKeyedChildren = (c1, c2, container, parentAnchor, parentComponent, pa
 </ul>
 ```
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/41f9b957775b441580d331f3c4f3656b~tplv-k3u1fbpfcp-jj-mark:1512:0:0:0:q75.awebp)
+![diff](../public/diff/diff-3.webp)
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5d570fbb6d864c379a0eaf6011cc3521~tplv-k3u1fbpfcp-jj-mark:1512:0:0:0:q75.awebp)
+![diff](../public/diff/diff-4.webp)
 
 事实上与新增节点操作类似，只是由`c2`多变成了`c1`多
 
@@ -185,11 +193,11 @@ const patchKeyedChildren = (c1, c2, container, parentAnchor, parentComponent, pa
 
 ## 如果二者都不满足呢？（源码里面叫Unknown Squence）
 
-![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/29972b7a05414f8daf0ffcd348b650b3~tplv-k3u1fbpfcp-jj-mark:1512:0:0:0:q75.awebp)
+![diff](../public/diff/diff-5.webp)
 
 这种情况下，`i<e1&&i<e2`。
 
-:::tip 一个前提提交
+:::tip 一个前提
 
 DOM更新的时候，性能优劣关系大致如下：属性更新 > 位置移动 > 增删节点。所以，我们尽量复用老节点，作属性更新操作，减少移动次数和增删节点次数。即尽量使用`patch`更新，实在不行再使用`move`移动节点
 
@@ -316,10 +324,57 @@ for(i=toBePatched - 1; i>=0; i--) {
 
 因为，没有出现在递增子序列内的节点代表他们的位置被前移了，所以把这些节点前移即可。
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1dcba8989ae348e6af85333a22280da2~tplv-k3u1fbpfcp-jj-mark:1512:0:0:0:q75.awebp)
+![diff](../public/diff/diff-6.webp)
 
 
 
-## 附加内容: GetSequence算法的实现
+## 附加内容: 
+
+### 1. GetSequence算法的实现
 
 [LIS算法与Vue的LIS算法的实现思路](/algorithm/LIS.html)
+
+### 2. 为什么不建议使用`index`作为`VNode.key`
+
+我们现在知道了，整个`diff`算法其实都是依赖于`vNode.key`来判断节点是否为同一个的，即`key`应该是`VNode`的**唯一**标识符，但是如果我们使用`index`作为标识符的话。
+
+举个例子：
+```js
+let c1 = [
+    {
+        id: 'a',
+        value: 'a'
+    },
+    {
+        id: 'b',
+        value: 'b'
+    },
+    {
+        id: 'c',
+        value: 'c'
+    }
+];
+
+let c2 = [
+    {
+        id: 'd',
+        value: 'd'
+    },
+    {
+        id: 'a',
+        value: 'a'
+    },
+    {
+        id: 'b',
+        value: 'b'
+    },
+    {
+        id: 'c',
+        value: 'c'
+    }
+]
+```
+
+此时我们发现，如果我们使用`id`作为`key`的话，在尾遍历后，只需要添加一个新节点即可完成`patch`，但是如果我们使用`index`的话，就会发现，我们需要从头到尾`patch`三个节点！再新增一个新的节点，这个相比使用`id`进行增删数组操作的损耗是非常非常大的！
+
+因此，当我们使用到数组进行增删操作的时候，尽量避免使用`index`作为`VNode.key`

@@ -1,6 +1,12 @@
 import { defineConfig } from 'vitepress';
 import { withMermaid } from 'vitepress-plugin-mermaid';
 
+import container from 'markdown-it-container';
+import { renderSandbox } from 'vitepress-plugin-sandpack';
+
+import mdItCustomAttrs from 'markdown-it-custom-attrs';
+import { replaceImagePath } from '../lib';
+
 // https://vitepress.dev/reference/site-config
 export default withMermaid(
   defineConfig({
@@ -8,7 +14,11 @@ export default withMermaid(
     // description: "Kevin's TechBlog",
     lang: 'zh-CN',
     outDir: './docs',
-    head: [['link', { rel: 'icon', href: '/logo.png' }]],
+    head: [
+      ['link', { rel: 'icon', href: '/logo.png' }],
+      ['link', { rel: 'stylesheet', href: '/fancybox/fancybox.css' }],
+      ['script', {src: '/fancybox/fancybox.umd.js'}],
+    ],
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
       logo: '/logo.png',
@@ -287,6 +297,24 @@ export default withMermaid(
         modules: {
           localsConvention: 'camelCase',
         },
+      },
+    },
+
+    markdown: {
+      config(md) {
+        md
+          // the second parameter is html tag name
+          .use(container, 'sandbox', {
+            render(tokens, idx) {
+              return renderSandbox(tokens, idx, 'sandbox');
+            },
+          })
+          .use(replaceImagePath, 'image', {
+          
+          })
+          .use(mdItCustomAttrs, 'image', {
+            'data-fancybox': 'gallery',
+          });
       },
     },
   })

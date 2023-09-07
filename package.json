@@ -9,15 +9,24 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
+    "@braintree/sanitize-url": "^6.0.4",
+    "cytoscape": "^3.26.0",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "dayjs": "^1.11.9",
+    "debug": "^4.3.4",
+    "markdown-it-custom-attrs": "^1.0.2",
     "vitepress": "^1.0.0-rc.10",
     "vitepress-plugin-back-to-top": "^1.0.1",
     "vitepress-plugin-comment-with-giscus": "^1.1.7",
-    "vitepress-plugin-mermaid": "^2.0.14"
+    "vitepress-plugin-mermaid": "^2.0.14",
+    "vitepress-plugin-sandpack": "^1.1.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "markdown-it-container": "^3.0.0",
     "prettier": "^3.0.3",
+    "sass": "^1.66.1",
     "vitepress-plugin-nprogress": "^0.0.4"
   },
   "pnpm": {

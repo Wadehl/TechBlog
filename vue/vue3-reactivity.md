@@ -1,3 +1,9 @@
+---
+outline: deep
+---
+
+
+
 # Vue3 Reactivity
 
 ## 线上DEMO
@@ -5,6 +11,8 @@
 stackBlitz:https://stackblitz.com/edit/stackblitz-webcontainer-api-starter-pzbq1g?file=index.html
 
 github地址: https://github.com/Wadehl/vue-easy-reactivity
+
+
 
 ## Vue2
 
@@ -167,7 +175,7 @@ export const mutableHandlers = {
 
 `targetMap`数据结构图：
 
-![image-20230903132902378](/image-20230903132902378.png)
+![image-20230903132902378](../public/image-20230903132902378.png)
 
 ```js
 const targetMap = new WeakMap();

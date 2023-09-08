@@ -8,9 +8,6 @@ import 'vitepress-plugin-nprogress/lib/css/index.css';
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import { EnhanceAppContext, useData, useRoute } from 'vitepress';
 
-// imgViewer
-import 'viewerjs/dist/viewer.min.css';
-
 // sandBox
 import { Sandbox } from 'vitepress-plugin-sandpack';
 

@@ -36,9 +36,6 @@ dependencies:
   vitepress-plugin-comment-with-giscus:
     specifier: ^1.1.7
     version: 1.1.7(vue@3.3.4)
-  vitepress-plugin-image-viewer:
-    specifier: ^1.1.2
-    version: 1.1.2
   vitepress-plugin-mermaid:
     specifier: ^2.0.14
     version: 2.0.14(mermaid@10.4.0)(vitepress@1.0.0-rc.10)
@@ -2968,10 +2965,6 @@ packages:
       sade: 1.8.1
     dev: false
 
-  /viewerjs@1.11.5:
-    resolution: {integrity: sha512-nsvQkC5jnqZ/2ggFYWUH5gpUGPtFAYidsFh8Q7B7sioAdqJzSJrELvbu9ozUm0W+A2uHN5XuuiheHHB+dWiPEA==}
-    dev: false
-
   /vite@4.4.9(sass@1.66.1):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -3020,12 +3013,6 @@ packages:
       '@giscus/vue': 2.3.0(vue@3.3.4)
     transitivePeerDependencies:
       - vue
-    dev: false
-
-  /vitepress-plugin-image-viewer@1.1.2:
-    resolution: {integrity: sha512-SUQekb0/85IF8nucFt6CDXSfn0P5KfnuBRqJh7ns6OexT/kmbOT/gzy43bMWwzSkzn6hS8VsK54cgNw8pobSJw==}
-    dependencies:
-      viewerjs: 1.11.5
     dev: false
 
   /vitepress-plugin-mermaid@2.0.14(mermaid@10.4.0)(vitepress@1.0.0-rc.10):

@@ -6,7 +6,7 @@ import 'vitepress-plugin-nprogress/lib/css/index.css';
 
 // giscus评论
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
-import { useData, useRoute } from 'vitepress';
+import { EnhanceAppContext, useData, useRoute } from 'vitepress';
 
 // imgViewer
 import 'viewerjs/dist/viewer.min.css';
@@ -16,7 +16,7 @@ import { Sandbox } from 'vitepress-plugin-sandpack';
 
 export default {
   ...DefaultTheme,
-  enhanceApp(ctx) {
+  enhanceApp(ctx: EnhanceAppContext) {
     DefaultTheme.enhanceApp(ctx);
     ctx.app.component('Sandbox', Sandbox);
     vitepressNprogress(ctx);
@@ -42,6 +42,5 @@ export default {
         route,
       }
     );
-    // Using
   },
 };

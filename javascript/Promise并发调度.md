@@ -9,12 +9,12 @@ class Scheduler {
     // ...
 }
 
-const timeout = (time) => new Promise(setTimeout(resolve, time));
+const timeout = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 const scheduler = new Scheduler(2);
 
 const addTask = (time, order) => {
-    scheduler.add(() => timeout(time).then(()=>{ console.log(order); }); );
+    scheduler.add(() => timeout(time).then(()=>{ console.log(order); }) );
 }
 
 addTask(1000, 1);

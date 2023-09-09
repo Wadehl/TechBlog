@@ -127,6 +127,10 @@ export default withMermaid(
                   text: '有时间限制的缓存',
                   link: '/javascript/有时间限制的缓存',
                 },
+                {
+                  text: 'LazyMan',
+                  link: '/javascript/LazyMan',
+                },
               ],
             },
             { text: 'TypeScript', link: '/typescript/' },
@@ -309,9 +313,7 @@ export default withMermaid(
               return renderSandbox(tokens, idx, 'sandbox');
             },
           })
-          .use(replaceImagePath, 'image', {
-          
-          })
+          .use(replaceImagePath)
           .use(mdItCustomAttrs, 'image', {
             'data-fancybox': 'gallery',
           });

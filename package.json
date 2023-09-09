@@ -2,6 +2,9 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "predev": "npx only-allow pnpm",
+    "prepreview": "npx only-allow pnpm",
+    "prebuild": "npx only-allow pnpm",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
@@ -11,11 +14,13 @@
   },
   "dependencies": {
     "@braintree/sanitize-url": "^6.0.4",
+    "@stackblitz/sdk": "^1.9.0",
     "cytoscape": "^3.26.0",
     "cytoscape-cose-bilkent": "^4.1.0",
     "dayjs": "^1.11.9",
     "debug": "^4.3.4",
     "markdown-it-custom-attrs": "^1.0.2",
+    "only-allow": "^1.1.1",
     "vitepress": "^1.0.0-rc.10",
     "vitepress-plugin-back-to-top": "^1.0.1",
     "vitepress-plugin-comment-with-giscus": "^1.1.7",

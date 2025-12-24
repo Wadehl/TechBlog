@@ -23,13 +23,16 @@ hero:
 
 <script setup>
   import { useRoute } from "vitepress";
-  
+  import { onMounted } from "vue";
+
   const { path } = useRoute();
-  if(path === '/go/' || path === '/go/index.html') {
-    document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
-    document.documentElement.style.setProperty('--vp-home-hero-name-background', 'linear-gradient(78deg, #5433ff 30%, #20bdff, #a5fecb)');
-    document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(to right, #5433ff, #20bdff, #a5fecb)');
-    document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(40px)');
-  }
+  onMounted(() => {
+    if(path === '/go/' || path === '/go/index.html') {
+      document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
+      document.documentElement.style.setProperty('--vp-home-hero-name-background', 'linear-gradient(78deg, #5433ff 30%, #20bdff, #a5fecb)');
+      document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(to right, #5433ff, #20bdff, #a5fecb)');
+      document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(40px)');
+    }
+  });
 </script>
 

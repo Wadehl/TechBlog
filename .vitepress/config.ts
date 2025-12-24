@@ -17,7 +17,8 @@ export default withMermaid(
     head: [
       ['link', { rel: 'icon', href: '/logo.png' }],
       ['link', { rel: 'stylesheet', href: '/fancybox/fancybox.css' }],
-      ['script', {src: '/fancybox/fancybox.umd.js'}],
+      // Defer fancybox script loading to avoid SSR issues
+      ['script', {src: '/fancybox/fancybox.umd.js', defer: ''}],
     ],
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
@@ -41,11 +42,17 @@ export default withMermaid(
                 // {text: 'react', link: '/react/'}
               ],
             },
+            // {
+            //   text: '后端',
+            //   items: [
+            //     { text: 'python-Web', link: '/python/' },
+            //     { text: 'go-Web', link: '/go/' },
+            //   ],
+            // },
             {
-              text: '后端',
+              text: 'LLM & AI Agent',
               items: [
-                { text: 'python-Web', link: '/python/' },
-                { text: 'go-Web', link: '/go/' },
+                { text: 'LLM & AI Agent', link: '/ai/' },
               ],
             },
           ],
@@ -161,6 +168,10 @@ export default withMermaid(
               collapsed: true,
               items: [
                 {
+                  text: 'Vue CLI 项目提速：Rspack vs Vite',
+                  link: '/front/vue-cli-rspack-vite-migration',
+                },
+                {
                   text: '前端权限认证方式',
                   link: '/front/前端权限认证方式',
                 },
@@ -184,61 +195,77 @@ export default withMermaid(
             },
           ],
         },
+        // {
+        //   text: '后端',
+        //   collapsed: true,
+        //   items: [
+        //     {
+        //       text: 'go',
+        //       collapsed: true,
+        //       items: [],
+        //     },
+        //     {
+        //       text: 'python',
+        //       collapsed: true,
+        //       items: [
+        //         {
+        //           text: 'Python爬虫',
+        //           collapsed: true,
+        //           items: [
+        //             {
+        //               text: '基础知识',
+        //               link: '/python/crawler/Python1',
+        //             },
+        //             {
+        //               text: 'Request库的使用',
+        //               link: '/python/crawler/Python2',
+        //             },
+        //             {
+        //               text: '数据解析',
+        //               link: '/python/crawler/Python3',
+        //             },
+        //             {
+        //               text: 'Re模块',
+        //               link: '/python/crawler/Python4',
+        //             },
+        //             {
+        //               text: 'Bs模块',
+        //               link: '/python/crawler/Python5',
+        //             },
+        //             {
+        //               text: 'Xpath模块',
+        //               link: '/python/crawler/Python6',
+        //             },
+        //             {
+        //               text: '爬虫实战',
+        //               link: '/python/crawler/Python7',
+        //             },
+        //             {
+        //               text: 'Python多线程',
+        //               link: '/python/crawler/Python8',
+        //             },
+        //           ],
+        //         },
+        //         {
+        //           text: 'Django',
+        //           collapsed: true,
+        //           items: [],
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
         {
-          text: '后端',
+          text: 'LLM & AI Agent',
           collapsed: true,
           items: [
             {
-              text: 'go',
-              collapsed: true,
-              items: [],
-            },
-            {
-              text: 'python',
+              text: 'Browser-Use',
               collapsed: true,
               items: [
                 {
-                  text: 'Python爬虫',
-                  collapsed: true,
-                  items: [
-                    {
-                      text: '基础知识',
-                      link: '/python/crawler/Python1',
-                    },
-                    {
-                      text: 'Request库的使用',
-                      link: '/python/crawler/Python2',
-                    },
-                    {
-                      text: '数据解析',
-                      link: '/python/crawler/Python3',
-                    },
-                    {
-                      text: 'Re模块',
-                      link: '/python/crawler/Python4',
-                    },
-                    {
-                      text: 'Bs模块',
-                      link: '/python/crawler/Python5',
-                    },
-                    {
-                      text: 'Xpath模块',
-                      link: '/python/crawler/Python6',
-                    },
-                    {
-                      text: '爬虫实战',
-                      link: '/python/crawler/Python7',
-                    },
-                    {
-                      text: 'Python多线程',
-                      link: '/python/crawler/Python8',
-                    },
-                  ],
-                },
-                {
-                  text: 'Django',
-                  collapsed: true,
-                  items: [],
+                  text: '浏览器自动化测试最佳实践',
+                  link: '/ai/browser-use',
                 },
               ],
             },

@@ -63,24 +63,27 @@ features:
 
 <script setup>
   import { useRoute } from "vitepress";
+  import { onMounted } from "vue";
 
   const { path } = useRoute();
-  if(path === '/javascript/' || path === '/javascript/index.html') {
-    document.documentElement.style.setProperty('--c-yellow', '#FFD859');
-    document.documentElement.style.setProperty('--c-yellow-dark', '#ECB732');
-    document.documentElement.style.setProperty('--c-yellow-light', '#F7D336');
-    document.documentElement.style.setProperty('--vp-home-hero-name-background', '-webkit-linear-gradient(135deg, #FFC107, #FF8F00)');
-    document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(135deg, #FFC107 30%, #FF8F00)');
-    document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(40px)');
-    document.documentElement.style.setProperty('--vp-button-brand-border', '#ECB732');
-    document.documentElement.style.setProperty('--vp-button-brand-text', '#2C3E50');
-    document.documentElement.style.setProperty('--vp-button-brand-bg', 'var(--c-yellow)');
-    document.documentElement.style.setProperty('--vp-button-brand-hover-border', 'var(--c-yellow-light)');
-    document.documentElement.style.setProperty('--vp-button-brand-hover-text', '#2C3E50');
-    document.documentElement.style.setProperty('--vp-button-brand-hover-bg', 'var(--c-yellow-light)');
-    document.documentElement.style.setProperty('--vp-button-brand-active-border', '#ECB732');
-    document.documentElement.style.setProperty('--vp-button-brand-active-text', '#2C3E50');
-    document.documentElement.style.setProperty('--vp-button-brand-active-bg', 'var(--vp-button-brand-bg)');
-    document.documentElement.style.setProperty('--vp-c-brand', 'var(--c-yellow)');
-  }
+  onMounted(() => {
+    if(path === '/javascript/' || path === '/javascript/index.html') {
+      document.documentElement.style.setProperty('--c-yellow', '#FFD859');
+      document.documentElement.style.setProperty('--c-yellow-dark', '#ECB732');
+      document.documentElement.style.setProperty('--c-yellow-light', '#F7D336');
+      document.documentElement.style.setProperty('--vp-home-hero-name-background', '-webkit-linear-gradient(135deg, #FFC107, #FF8F00)');
+      document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(135deg, #FFC107 30%, #FF8F00)');
+      document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(40px)');
+      document.documentElement.style.setProperty('--vp-button-brand-border', '#ECB732');
+      document.documentElement.style.setProperty('--vp-button-brand-text', '#2C3E50');
+      document.documentElement.style.setProperty('--vp-button-brand-bg', 'var(--c-yellow)');
+      document.documentElement.style.setProperty('--vp-button-brand-hover-border', 'var(--c-yellow-light)');
+      document.documentElement.style.setProperty('--vp-button-brand-hover-text', '#2C3E50');
+      document.documentElement.style.setProperty('--vp-button-brand-hover-bg', 'var(--c-yellow-light)');
+      document.documentElement.style.setProperty('--vp-button-brand-active-border', '#ECB732');
+      document.documentElement.style.setProperty('--vp-button-brand-active-text', '#2C3E50');
+      document.documentElement.style.setProperty('--vp-button-brand-active-bg', 'var(--vp-button-brand-bg)');
+      document.documentElement.style.setProperty('--vp-c-brand', 'var(--c-yellow)');
+    }
+  });
 </script>

@@ -38,13 +38,16 @@ features:
 ---
 <script setup>
   import { useRoute } from "vitepress";
-  
+  import { onMounted } from "vue";
+
   const { path } = useRoute();
-  if(path === '/webs/' || path === '/webs/index.html') {
-    document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
-    document.documentElement.style.setProperty('--vp-home-hero-name-background', '-webkit-linear-gradient( 78deg, #7F7FD5 30%, #86A8E7, #91EAE4)');
-    document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient( 15deg, #7F7FD5 30%, #86A8E7, #91EAE4 )');
-    document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(40px)');
-    document.documentElement.style.setProperty('-webkit-background-clip', 'text');
-  }
+  onMounted(() => {
+    if(path === '/webs/' || path === '/webs/index.html') {
+      document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
+      document.documentElement.style.setProperty('--vp-home-hero-name-background', '-webkit-linear-gradient( 78deg, #7F7FD5 30%, #86A8E7, #91EAE4)');
+      document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient( 15deg, #7F7FD5 30%, #86A8E7, #91EAE4 )');
+      document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(40px)');
+      document.documentElement.style.setProperty('-webkit-background-clip', 'text');
+    }
+  });
 </script>

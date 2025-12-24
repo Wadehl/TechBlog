@@ -1,0 +1,1 @@
+import{_ as t,c as a,o as e}from"./chunks/framework.DeK-WOGe.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"javascript/垃圾回收机制.md","filePath":"javascript/垃圾回收机制.md"}'),r={name:"javascript/垃圾回收机制.md"};function s(c,o,_,n,p,i){return e(),a("div")}const f=t(r,[["render",s]]);export{m as __pageData,f as default};

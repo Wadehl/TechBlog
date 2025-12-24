@@ -25,26 +25,30 @@ features:
 ---
 <script setup>
       import { useRoute } from "vitepress";
+      import { onMounted } from "vue";
+
       const { path } = useRoute();
-      if(path === '/algorithm/' || path === '/algorithm/index.html') {
-     	document.documentElement.style.setProperty('--c-orange', '\#ff7707');
-        document.documentElement.style.setProperty('--c-orange-dark', '#ff7707');
-        document.documentElement.style.setProperty('--c-orange-light', '\#f68b32');
-        document.documentElement.style.setProperty('--vp-home-hero-name-background', '-webkit-linear-gradient(120deg, #ff7707 30%, #809aff)');
-        document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(-45deg, #ff7707 50%, #809aff 50%);');
-        document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(72px)');
-        document.documentElement.style.setProperty('--vp-button-brand-border', 'var(--c-orange-light)');
-        document.documentElement.style.setProperty('--vp-button-brand-text', '#FFF');
-        document.documentElement.style.setProperty('--vp-button-brand-bg', 'var(--c-orange)');
-        document.documentElement.style.setProperty('--vp-button-brand-hover-border', 'var(--c-orange-light)');
-        document.documentElement.style.setProperty('--vp-button-brand-hover-text', '#FFF');
-        document.documentElement.style.setProperty('--vp-button-brand-hover-bg', 'var(--c-orange-light)');
-        document.documentElement.style.setProperty('--vp-button-brand-active-border', 'var(--c-orange-light)');
-        document.documentElement.style.setProperty('--vp-button-brand-active-text', '#FFF');
-        document.documentElement.style.setProperty('--vp-button-brand-active-bg', 'var(--vp-button-brand-bg)');
-        document.documentElement.style.setProperty('--vp-c-brand', 'var(--c-orange)');
-        document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
-      }
+      onMounted(() => {
+        if(path === '/algorithm/' || path === '/algorithm/index.html') {
+          document.documentElement.style.setProperty('--c-orange', '\#ff7707');
+          document.documentElement.style.setProperty('--c-orange-dark', '#ff7707');
+          document.documentElement.style.setProperty('--c-orange-light', '\#f68b32');
+          document.documentElement.style.setProperty('--vp-home-hero-name-background', '-webkit-linear-gradient(120deg, #ff7707 30%, #809aff)');
+          document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(-45deg, #ff7707 50%, #809aff 50%);');
+          document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(72px)');
+          document.documentElement.style.setProperty('--vp-button-brand-border', 'var(--c-orange-light)');
+          document.documentElement.style.setProperty('--vp-button-brand-text', '#FFF');
+          document.documentElement.style.setProperty('--vp-button-brand-bg', 'var(--c-orange)');
+          document.documentElement.style.setProperty('--vp-button-brand-hover-border', 'var(--c-orange-light)');
+          document.documentElement.style.setProperty('--vp-button-brand-hover-text', '#FFF');
+          document.documentElement.style.setProperty('--vp-button-brand-hover-bg', 'var(--c-orange-light)');
+          document.documentElement.style.setProperty('--vp-button-brand-active-border', 'var(--c-orange-light)');
+          document.documentElement.style.setProperty('--vp-button-brand-active-text', '#FFF');
+          document.documentElement.style.setProperty('--vp-button-brand-active-bg', 'var(--vp-button-brand-bg)');
+          document.documentElement.style.setProperty('--vp-c-brand', 'var(--c-orange)');
+          document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
+        }
+      });
 </script>
 
 

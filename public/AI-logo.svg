@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="200" height="200">
+  <defs>
+    <radialGradient id="geminiGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4285F4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9B72F2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D96570;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <!-- Gemini star/sparkle icon -->
+  <path fill="url(#geminiGradient)" d="M24 4L26.5 13.5L36 16L26.5 18.5L24 28L21.5 18.5L12 16L21.5 13.5L24 4Z"/>
+  <path fill="url(#geminiGradient)" opacity="0.8" d="M38 8L39.5 13L44 14.5L39.5 16L38 21L36.5 16L32 14.5L36.5 13L38 8Z"/>
+  <path fill="url(#geminiGradient)" opacity="0.6" d="M10 32L11.5 36L15 37.5L11.5 39L10 43L8.5 39L5 37.5L8.5 36L10 32Z"/>
+  <path fill="url(#geminiGradient)" d="M32 34L33.5 38L37 39.5L33.5 41L32 45L30.5 41L27 39.5L30.5 38L32 34Z"/>
+</svg>

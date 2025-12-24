@@ -1,0 +1,1 @@
+import{_ as l,c as e,o as i,aB as t}from"./chunks/framework.DeK-WOGe.js";const h=JSON.parse('{"title":"CDN","description":"","frontmatter":{},"headers":[],"relativePath":"webs/CDN.md","filePath":"webs/CDN.md"}'),o={name:"webs/CDN.md"};function r(p,a,n,c,d,s){return i(),e("div",null,[...a[0]||(a[0]=[t("",11)])])}const D=l(o,[["render",r]]);export{h as __pageData,D as default};

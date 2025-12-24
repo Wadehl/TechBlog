@@ -37,13 +37,16 @@ features:
 ---
 <script setup>
   import { useRoute } from "vitepress";
+  import { onMounted } from "vue";
 
   const { path } = useRoute();
-  if(path === '/vue/' || path === '/vue/index.html') {
-    document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
-    document.documentElement.style.setProperty('--vp-home-hero-name-background', '-webkit-linear-gradient(315deg,#42d392 25%,#647eff)');
-    document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(315deg,#42d392 25%,#647eff)');
-    document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(56px)');
-    document.documentElement.style.setProperty('-webkit-background-clip', 'text');
-  }
+  onMounted(() => {
+    if(path === '/vue/' || path === '/vue/index.html') {
+      document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
+      document.documentElement.style.setProperty('--vp-home-hero-name-background', '-webkit-linear-gradient(315deg,#42d392 25%,#647eff)');
+      document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(315deg,#42d392 25%,#647eff)');
+      document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(56px)');
+      document.documentElement.style.setProperty('-webkit-background-clip', 'text');
+    }
+  });
 </script>

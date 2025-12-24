@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as n}from"./chunks/framework.DeK-WOGe.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"coding/index.md","filePath":"coding/index.md"}'),a={name:"coding/index.md"};function o(c,r,d,i,s,p){return n(),t("div")}const f=e(a,[["render",o]]);export{m as __pageData,f as default};

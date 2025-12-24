@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as r}from"./chunks/framework.DeK-WOGe.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"front/前端跨域.md","filePath":"front/前端跨域.md"}'),a={name:"front/前端跨域.md"};function o(n,s,c,_,f,p){return r(),e("div")}const m=t(a,[["render",o]]);export{i as __pageData,m as default};

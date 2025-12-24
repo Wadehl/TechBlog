@@ -39,12 +39,15 @@ features:
 
 <script setup>
   import { useRoute } from "vitepress";
+  import { onMounted } from "vue";
 
   const { path } = useRoute();
-  if(path === '/python/' || path === '/python/index.html') {
-    document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
-    document.documentElement.style.setProperty('--vp-home-hero-name-background', 'linear-gradient(78deg, #be93c5 30%, #7bc6cc)');
-    document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(to right, #be93c5, #7bc6cc)');
-    document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(40px)');
-  }
+  onMounted(() => {
+    if(path === '/python/' || path === '/python/index.html') {
+      document.documentElement.style.setProperty('--vp-home-hero-name-color', 'transparent');
+      document.documentElement.style.setProperty('--vp-home-hero-name-background', 'linear-gradient(78deg, #be93c5 30%, #7bc6cc)');
+      document.documentElement.style.setProperty('--vp-home-hero-image-background-image', 'linear-gradient(to right, #be93c5, #7bc6cc)');
+      document.documentElement.style.setProperty('--vp-home-hero-image-filter', 'blur(40px)');
+    }
+  });
 </script>

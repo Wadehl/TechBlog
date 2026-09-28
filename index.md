@@ -18,7 +18,7 @@ hero:
 features:
   - title: LLM & AI Agent
     icon: 🤖
-    details: 探索大语言模型、AI Agent 的实际应用与最佳实践
+    details: 2025 到 2026 的实践：MCP、爬虫、Browser-Use、Codex Subagent
     link: /ai/
     linkText: 开始探索
   - title: javascript

@@ -1,4 +1,13 @@
+---
+title: Vue CLI 项目提速：Rspack vs Vite 迁移方案对比
+date: 2025-08-08
+description: Vue CLI 3 老项目迁到 Rspack 的结果，以及 Vite 在这个仓库里踩到的运行时问题。
+outline: deep
+---
+
 # Vue CLI 项目提速：Rspack vs Vite 迁移方案对比
+
+> 写于 2025-08-08
 
 > 项目背景: 基于开源库二次开发的 Vue CLI 3.5.3 + Webpack 4 + Vue 2.7 老旧项目，代码及依赖版本落后，构建机器使用 Node 14，开发和构建速度极慢，严重影响日常开发体验。
 > 
@@ -152,7 +161,7 @@ tools: {
     plugins: [
       new (require('@rspack/core')).EnvironmentPlugin({
         NODE_ENV: 'development',
-        VUE_APP_BASE_API: '//orionapi.37mobi.com'
+        VUE_APP_BASE_API: '//api.example.com'
       })
     ]
   }

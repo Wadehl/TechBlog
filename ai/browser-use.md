@@ -1,4 +1,13 @@
+---
+title: 让自动化测试 Agent 更好地代理你的浏览器
+date: 2025-11-21
+description: 用 CDP、Playwright 和 BrowserUse 把浏览器自动化测试交给 Agent。
+outline: deep
+---
+
 # 让自动化测试Agent更好地代理你的浏览器
+
+> 写于 2025-11-21
 
 ## 引言
 
@@ -128,44 +137,20 @@ async def query_network_data(keyword: str = "") -> ActionResult:
 
 ### 实际应用场景
 
-### 示例：验证游戏背包数据
+### 示例：对照页面文案与接口返回
 
-在一个游戏活动测试中，Agent需要验证页面显示的背包物品是否与接口返回的数据一致：
+Agent 需要确认页面上展示的内容和接口返回是否一致。工具按 URL 关键词取出已经捕获的响应，再交给 Agent 做比对：
 
 ```python
 # Agent通过工具获取接口数据
-backpack_data = await query_network_data(keyword="listAward")
+catalog_data = await query_network_data(keyword="catalog")
 
 # 自动解析JSONP格式
-# jsonpCallback123({"awards": [{"name": "金币", "count": 1000}]})
-# 解析后得到：{"awards": [{"name": "金币", "count": 1000}]}
+# jsonpCallback123({"items": [{"name": "Notebook", "count": 12}]})
+# 解析后得到：{"items": [{"name": "Notebook", "count": 12}]}
 ```
 
 ## 核心能力二：精准的浏览器控制与状态管理
-
-### 自动登录状态管理
-
-传统方式下，Agent需要自己找到登录入口、输入账号密码、处理验证码等复杂流程。我们提供了更直接的方案：
-
-```python
-@tools.action(
-    description="执行自动登录。传入域名，自动完成登录流程"
-)
-async def get_login_state(domain: str) -> ActionResult:
-    # 封装函数逻辑，请求接口获取免登录URL
-    login_url = get_auto_login_url(domain)
-    
-    # 直接导航到免登录链接
-    await playwright_page.goto(login_url)
-    
-    # 等待登录完成并记录状态
-    await asyncio.sleep(5)
-    
-    return ActionResult(
-        extracted_content="登录已完成",
-        metadata={"login_url": login_url, "success": True}
-    )
-```
 
 ### DOM元素的智能操作
 
@@ -217,8 +202,6 @@ async def find_and_scroll_to_element(dom_ids: list[str]) -> ActionResult:
 
 ### 为什么这些操作不能完全依赖Agent
 
-![Agent决策问题示意图](/ai/browser-use-agent-decision.png)
-
 从实践中我们发现，当让Agent完全自主决策时，会出现以下问题：
 
 1. **重复尝试**：Agent可能会多次尝试相同的操作，即使已经失败
@@ -245,14 +228,14 @@ async def find_and_scroll_to_element(dom_ids: list[str]) -> ActionResult:
 
 ```python
 @tools.action(
-    description="标记当前Tab为初始活动页"
+    description="标记当前Tab为初始页"
 )
 async def mark_current_tab_as_initial(take_action=True) -> ActionResult:
     initial_tab_id = await get_current_page_target_id()
     _browser_manager.initial_activity_tab_id = initial_tab_id
     
     return ActionResult(
-        extracted_content=f"已标记初始活动页: {initial_tab_id}"
+        extracted_content=f"已标记初始页: {initial_tab_id}"
     )
 ```
 
@@ -290,7 +273,7 @@ async def close_all_tabs_and_return_to_initial(take_action=True) -> ActionResult
 
 ### 工具选择策略
 
-1. **确定性操作用工具**：登录、滚动、Tab管理等
+1. **确定性操作用工具**：滚动、元素定位、Tab管理等
 2. **探索性操作给Agent**：查找元素、理解内容、做判断
 
 ### Prompt工程技巧
@@ -298,16 +281,15 @@ async def close_all_tabs_and_return_to_initial(take_action=True) -> ActionResult
 ```python
 # 好的prompt示例
 prompt = """
-1. 首先使用 get_login_state 确保已登录
-2. 使用 query_network_data(keyword="listAward") 获取背包数据
-3. 对比页面显示和接口数据是否一致
-4. 如果需要滚动，使用 find_and_scroll_to_element
+1. 使用 query_network_data(keyword="catalog") 获取接口数据
+2. 对比页面显示和接口数据是否一致
+3. 如果需要滚动，使用 find_and_scroll_to_element
 """
 
 # 避免的prompt
 avoid_prompt = """
-1. 登录系统
-2. 查看背包数据
+1. 打开目标页面
+2. 查看接口数据
 3. 验证数据一致性
 """  # 太模糊，Agent需要自己决策太多细节
 ```
@@ -326,24 +308,22 @@ avoid_prompt = """
 
 当工具不需要任何参数就可以执行时，**强烈建议添加一个无意义的默认参数**。这是因为AI Agent在调用空参数工具时，经常会自作主张地添加一些不存在的参数，导致Pydantic模型校验失败。
 
-![Agent参数错误示意图](/ai/browser-use-parameter-error.png)
-
-如图，`get_login_state` 不需要传递任何参数，但是Agent调用的时候调用的时候就是添加了`activity_id` 的参数，导致工具报错。
+一个没有参数的 `scroll_to_top`，Agent 仍可能自己补上页面上并不存在的字段，校验直接失败。
 
 ```python
 # ❌ 不好的定义
 @tools.action(
-    description="获取所有支持的域名列表"
+    description="滚动到页面顶部"
 )
-async def get_all_domains() -> ActionResult:
+async def scroll_to_top() -> ActionResult:
     # Agent可能会传入 {"_placeholder": ""} 导致错误
     pass
 
 # ✅ 好的定义
 @tools.action(
-    description="获取所有支持的域名列表"
+    description="滚动到页面顶部"
 )
-async def get_all_domains(take_action: bool = True) -> ActionResult:
+async def scroll_to_top(take_action: bool = True) -> ActionResult:
     """
     Args:
         take_action: 是否执行操作（默认True，兼容BrowserUse LLM行为模式的占位参数）

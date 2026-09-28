@@ -168,8 +168,24 @@ export default withMermaid(
               collapsed: true,
               items: [
                 {
+                  text: '在线客服消息列表渲染',
+                  link: '/front/cs-message-list',
+                },
+                {
                   text: 'Vue CLI 项目提速：Rspack vs Vite',
                   link: '/front/vue-cli-rspack-vite-migration',
+                },
+                {
+                  text: '深入 Immer：Patches 与状态管理',
+                  link: '/front/immer-patches',
+                },
+                {
+                  text: '滚动抽奖组件',
+                  link: '/front/lottery-scroll',
+                },
+                {
+                  text: '多语言本地化平台性能优化',
+                  link: '/front/i18n-platform-performance',
                 },
                 {
                   text: '前端权限认证方式',
@@ -260,14 +276,20 @@ export default withMermaid(
           collapsed: true,
           items: [
             {
-              text: 'Browser-Use',
-              collapsed: true,
-              items: [
-                {
-                  text: '浏览器自动化测试最佳实践',
-                  link: '/ai/browser-use',
-                },
-              ],
+              text: 'Codex Subagent',
+              link: '/ai/codex-subagent',
+            },
+            {
+              text: '浏览器自动化测试最佳实践',
+              link: '/ai/browser-use',
+            },
+            {
+              text: 'AI 赋能爬虫',
+              link: '/ai/ai-crawler',
+            },
+            {
+              text: 'TypeScript 与 MCP 工程化',
+              link: '/ai/typescript-mcp',
             },
           ],
         },

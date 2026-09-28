@@ -7,3 +7,6 @@
 
 package-lock.json
 pnpm-lock.yaml
+
+# macOS AppleDouble
+._*
